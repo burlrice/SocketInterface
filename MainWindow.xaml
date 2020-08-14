@@ -1,0 +1,63 @@
+﻿<Window
+    x:Class="SocketInterface.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:SocketInterface"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="700"
+    ScrollViewer.VerticalScrollBarVisibility="Auto"
+    mc:Ignorable="d">
+
+    <Grid Margin="50" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width=".25*" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="IP Address" />
+        <TextBox
+            Name="address"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            Text="127.0.0.1" />
+
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="Send" />
+        <TextBox
+            x:Name="send"
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            VerticalScrollBarVisibility="Auto" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="20,0,0,0"
+            Click="Button_Click"
+            Content="Send" />
+
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="Recv" />
+        <TextBox
+            x:Name="recv"
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Height="200"
+            TextWrapping="Wrap" />
+    </Grid>
+</Window>
